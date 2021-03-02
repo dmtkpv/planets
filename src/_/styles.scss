@@ -1,0 +1,375 @@
+#system {
+
+
+
+    // ----------------------
+    // Vars
+    // ----------------------
+
+    $perspective: 1000px;
+    $angle: 0deg;
+    $max-width: 1920px;
+    $min-width: 320px;
+
+    $levels: (
+        1: (
+            1: ( 7 ), // parental control
+            2: ( 5 ), // early Learners
+            3: ( 3 ), // Parent Support
+            4: ( 5 ), // Assessments
+            5: ( 5 ), // Social Features
+            6: ( 4 ), // Grading
+            7: ( 7 ), // Multimedia
+            8: ( 6 ), // Gamification
+            9: ( 3 ), // Data Feedback
+            10: ( 5 ) // Other
+        ),
+        2: (
+            1: ( 13, 3 ), // reading
+            2: ( 8 ),     // writing
+            3: ( 6, 2 ),  // vocabulary
+            4: ( 3, 1 )  // fluency
+        ),
+        3: (
+            1: ( 13, 3 ), // reading
+            2: ( 8 ),     // writing
+            3: ( 6, 2 ),  // vocabulary
+            4: ( 3, 1 )  // fluency
+        )
+    );
+
+
+
+    // -------------------------
+    // Pass vars to javascript
+    // -------------------------
+
+    --perspective: #{$perspective};
+    --angle: #{$angle};
+    --max-width: #{$max-width};
+    --min-width: #{$min-width};
+
+
+
+    // -------------------------
+    // Root
+    // -------------------------
+
+    position: absolute;
+    transform-origin: 0 0;
+    background: #222;
+
+    * {
+        position: absolute;
+        transform-style: preserve-3d;
+    }
+
+
+
+    // -------------------------
+    // Camera
+    // -------------------------
+
+    .camera {
+        bottom: 0;
+        left: 0;
+        width: $max-width;
+        height: $max-width;
+        transform: perspective($perspective) translateY(50%) rotateX($angle) translateY(-50%);
+        border: 4px dashed #F00;
+    }
+
+
+
+    // -------------------------
+    // Orbit
+    // -------------------------
+
+    @mixin orbit ($size) {
+        width: $size;
+        height: $size;
+        margin-top: -$size / 2;
+        margin-left: -$size / 2;
+    }
+
+    %orbit {
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        border: 2px dashed #CCCCCC;
+    }
+
+    //$index: 0;
+    //
+    //.level:nth-child(#{$index + 1}) {
+    //    @extend object($max-width)
+    //}
+
+
+    @each $levelIndex, $systems in $levels {
+
+        .level:nth-child(#{$levelIndex}) {
+
+            $levelSize: $max-width / $level;
+
+            @extend %orbit;
+            @include orbit(200); // -???
+
+            @each $system, $moons in $systems {
+
+                .system:nth-child(#{$system}) {
+
+                    //@extend %orbit;
+
+                    //transform: rotate(30deg) translate($max-width / 2);
+
+                }
+
+            }
+
+        }
+
+        //
+        //$background: nth($keyNumber, 1);
+        //$lowlight: nth($keyNumber, 2);
+        //header {
+        //    .section_#{$colourList} & {
+        //        background-color: $background;
+        //        border-right: 2px dotted $lowlight;
+        //    }
+        //}
+    }
+
+
+
+    //
+    //.object {
+    //
+    //}
+    //
+    //.orbit {
+    //
+    //    top: 50%;
+    //    left: 50%;
+    //    border-radius: 50%;
+    //    border: 2px dashed #CCCCCC;
+    //    animation: orbit 20s linear infinite;
+    //
+    //    &.o1 {
+    //        @include orbit($max-width);
+    //    }
+    //    &.o2 {
+    //        @include orbit($max-width / 5);
+    //    }
+    //
+    //}
+    //
+    //
+    //.system {
+    //    top: 50%;
+    //    left: 50%;
+    //
+    //    &.a {
+    //        @include orbit($max-width / 5);
+    //        transform: rotate(30deg) translate($max-width / 2);
+    //    }
+    //    &.b {
+    //        @include orbit($max-width / 20);
+    //        transform: rotate(30deg) translate($max-width / 10);
+    //    }
+    //    &.c {
+    //        @include orbit($max-width / 20);
+    //        transform: rotate(180deg) translate($max-width / 10);
+    //
+    //    }
+    //}
+    //
+    //.planet {
+    //    width: 100%;
+    //    height: 100%;
+    //    background: #F00;
+    //}
+    //
+    //
+    //
+    //
+    //
+    //.test {
+    //    bottom: 0;
+    //    left: 50%;
+    //    width: 50px;
+    //    height: 50px;
+    //    background: #F00;
+    //    transform-origin: 50% 10%;
+    //    animation: reverse-orbit 20s linear infinite;
+    //    //transform: rotateX(-$angle);
+    //}
+    //
+    //@keyframes orbit {
+    //    0% { transform: rotate(0deg) }
+    //    100% { transform: rotate(360deg) }
+    //}
+    //
+    //@keyframes reverse-orbit {
+    //    0% { transform: rotateX(-$angle) rotateY(0deg) }
+    //    100% { transform: rotateX(-$angle) rotateY(360deg) }
+    //}
+
+}
+
+
+//
+//
+//#system {
+//
+//    --perspective: 800px;
+//    --angle: 90deg;
+//    --max-width: 1920px;
+//    --min-width: 320px;
+//
+//
+//}
+//
+//#system .camera {
+//    position: absolute;
+//    bottom: 0;
+//    left: 0;
+//    width: 100%;
+//    padding-top: 100%;
+//    transform: translateY(50%) rotateX(var(--angle)) translateY(-50%);
+//    overflow: visible;
+//    border: 4px dashed #F00;
+//}
+//#system .camera * {
+//    transform-style: preserve-3d;
+//    overflow: visible;
+//    backface-visibility: hidden; /* I added this */
+//}
+//
+//
+//.orbit {
+//    position: absolute;
+//    top: 50%;
+//    left: 50%;
+//    width: 1920px;
+//    height: 1920px;
+//    margin: -960px 0 0 -960px;
+//    /*width: calc(var(--radius) * 2);*/
+//    /*height: calc(var(--radius) * 2);*/
+//    /*margin: calc(var(--radius) * -1) 0 0 calc(var(--radius) * -1);*/
+//    border-radius: 50%;
+//    border: 2px dashed #CCCCCC;
+//    animation: orbit 20s linear infinite;
+//
+//
+//}
+//
+//
+//.orbit.o1 {
+//    --radius: calc(var(--max-width) / 2);
+//}
+//.orbit.o11 {
+//    --radius: calc(var(--max-width) / 10);
+//}
+///*.orbit.o2 {*/
+///*    --diameter: calc(var(--max-width) / 2);*/
+///*}*/
+//
+///*.point {*/
+///*    position: absolute;*/
+///*    top: 50%;*/
+///*    left: 50%;*/
+///*    border-radius: 50%;*/
+///*    width: calc(var(--point-radius) * 2);*/
+///*    height: calc(var(--point-radius) * 2);*/
+///*    margin: calc(var(--point-radius) * -1) 0 0 calc(var(--point-radius) * -1);*/
+///*    transform: rotate(90deg) translateX(var(--radius));*/
+///*}*/
+//
+//.moon {
+//    /*--point-radius: 50px;*/
+//    position: absolute;
+//    top: 0;
+//    left: 50%;
+//    width: 100px;
+//    height: 100px;
+//    background: #F00;
+//    transform: rotateX(60deg);
+//    /*transform: rotateX(calc(var(--angle) * -1));*/
+//
+//}
+//
+//
+
+//
+//
+///*.scene {*/
+///*    position: relative;*/
+///*}*/
+//
+///*.zoom {*/
+///*    position: absolute;*/
+///*    top: 0;*/
+///*    left: 0;*/
+///*    width: 100%;*/
+///*    height: 100%;*/
+///*    transform: scale(1.5);*/
+///*}*/
+//
+//
+///*.plane {*/
+///*    position: absolute;*/
+///*    top: 0;*/
+///*    left: 0;*/
+///*    width: 100%;*/
+///*    height: 100%;*/
+///*    !*transform: rotateX(var(--angle));*!*/
+///*    transform-origin: 50% 100%;*/
+//
+///*}*/
+//
+//
+///*.orbit {*/
+///*    position: absolute;*/
+///*    top: 0;*/
+///*    left: 0;*/
+///*    width: 100%;*/
+///*    height: 100%;*/
+///*    border-radius: 50%;*/
+///*    border: 2px dashed rgba(0,0,0,.2);*/
+///*    animation: orbit 20s linear infinite;*/
+///*}*/
+///*.orbit .planet {*/
+///*    position: absolute;*/
+///*    left: 50%;*/
+///*    top: 0;*/
+///*    width: 10px;*/
+///*    height: 10px;*/
+///*    background: #00F;*/
+///*}*/
+///*.moons {*/
+///*    position: absolute;*/
+///*    left: 50%;*/
+///*    top: 0;*/
+///*    width: 10px;*/
+///*    height: 10px;*/
+///*    background: #00F;*/
+///*}*/
+//
+//
+//
+///*.orbit.o1 {*/
+///*    transform: rotateZ(90deg);*/
+///*}*/
+//
+///*.planet {*/
+///*    position: absolute;*/
+///*    top: 50%;*/
+///*    left: 50%;*/
+///*}*/
+//
+//
+///*#p1 {*/
+//
+//
+///*}*/

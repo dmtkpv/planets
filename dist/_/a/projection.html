@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #projection {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            background: #F00;
+            perspective: 500px;
+        }
+        #dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 4px;
+            margin: -2px 0 0 -2px;
+            background: #000;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="projection">
+        <div id="dot"></div>
+    </div>
+
+
+    <script>
+
+        const $dot = document.getElementById('dot')
+
+        const perspective = 500;
+        const point = [0, 0, -100];
+
+        $dot.style.transform = `translate3d(${point[0]}px, ${point[1]}px, ${point[2]}px)`
+
+        const point2 = [
+            point[0] - 200,
+            point[1] + 200,
+            point[2]
+        ]
+
+        console.log(point2[1] * perspective / (perspective - point2[2]))
+
+    </script>
+
+</body>
+</html>

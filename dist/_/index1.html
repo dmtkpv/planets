@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LS Solar System</title>
+    <link rel="stylesheet" href="planetary.css">
+    <script src="planetary.css"></script>
+
+
+
+    <!--
+        Global styles
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        section {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background: #F1F7FF;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<!--
+    Solar system
+-->
+
+<section>
+    <div id="solar-system"></div>
+<!--    -->
+<!--    <div id="system">-->
+<!--        <div class="camera">-->
+
+<!--            <div class="level">-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--            </div>-->
+
+<!--            <div class="level">-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--            </div>-->
+
+<!--            <div class="level">-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--                <div class="system"></div>-->
+<!--            </div>-->
+
+
+<!--            <div class="object l1">-->
+
+<!--                <div class="object">-->
+
+<!--                    <div class="body planet"></div>-->
+
+<!--                    <div class="object">-->
+<!--                        <div class="body moon"></div>-->
+<!--                    </div>-->
+
+<!--                    <div class="object">-->
+<!--                        <div class="body moon"></div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--            </div>-->
+
+
+
+<!--            <div class="orbit o1">-->
+
+<!--                <div class="system a">-->
+
+<!--                    <div class="orbit o2">-->
+<!--                        <div class="system b">-->
+<!--                            <div class="planet"></div>-->
+<!--                        </div>-->
+<!--                        <div class="system c">-->
+<!--                            <div class="planet"></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="test"></div>-->
+<!--                <div class="point moon"></div>-->
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!--
+    Zoom control
+-->
+
+<div id="zoom">
+    <button>+</button>
+    <input disabled value="57">
+    <button>-</button>
+</div>
+
+
+<script>
+
+    new Planetary('#system', [
+
+    ])
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LS Solar System</title>
+    <link rel="stylesheet" href="planetary-system.css">
+    <script src="planetary-system.js"></script>
+    <script src="planetary-data.js"></script>
+
+
+
+    <!--
+        Global styles
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        section {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background: #F1F7FF;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<!--
+    Solar system
+-->
+
+<section>
+    <div id="system"></div>
+</section>
+
+
+
+<!--
+    Zoom control
+-->
+
+<div id="zoom">
+    <button>+</button>
+    <input disabled value="57">
+    <button>-</button>
+</div>
+
+
+<script>
+
+
+
+    // --------------------
+    // Config
+    // --------------------
+
+    const system = new PlanetarySystem('#system', {
+        data: planetaryData,
+        camera: {
+            perspective: 1000,
+            angle: 90
+        }
+    });
+
+
+
+    // --------------------
+    // Zoom
+    // --------------------
+
+    const $zoomVal = document.querySelector('#zoom input');
+    const $zoomIn = document.querySelector('#zoom button:first-child');
+    const $zoomOut = document.querySelector('#zoom button:last-child');
+
+    system.on('zoom', () => {
+        $zoomVal.value = Math.round(system.zoom.value);
+    })
+
+    $zoomIn.addEventListener('click', () => {
+        system.setZoom(system.zoom.value + 10);
+    });
+
+    $zoomOut.addEventListener('click', () => {
+        system.setZoom(system.zoom.value - 10);
+    });
+
+
+
+    // --------------------
+    // Resize
+    // --------------------
+
+    window.addEventListener('resize', () => {
+        system.resize();
+    });
+
+    system.resize();
+
+</script>
+
+
+</body>
+</html>
