@@ -1,21 +1,6 @@
-import '@/styles/base.scss'
-import renderer from '@/scripts/renderer'
-
-
-
-function getHeight (width, { perspective, angle }) {
-    const a = -angle * Math.PI / 180;
-    const y = width - width * Math.cos(a);
-    const z = width * Math.sin(a);
-    return width - width / 2 - (y - width / 2) * perspective / (perspective - z);
-}
-
-function getMaxLevel (data) {
-    return Math.max(...data.map(item => item.level));
-}
-
-
-
+import './styles.css'
+import PlanetaryObject from './object'
+import Utils from './utils'
 
 export default class PlanetarySystem {
 
@@ -25,32 +10,50 @@ export default class PlanetarySystem {
     // Constructor
     // ----------------------
 
-    constructor (selector, { camera, data }) {
+    constructor (selector, { camera, canvas, objects }) {
+
+
+        // config
 
         this.events = {};
         this.camera = camera;
 
         this.zoom = {};
         this.zoom.max = 1;
-        this.zoom.steps = 10;
 
         this.width = {};
-        this.width.max = 1920;
-        this.width.min = 320;
+        this.width.max = canvas.maxWidth;
+        this.width.min = canvas.minWidth;
 
         this.height = {};
-        this.height.max = getHeight(this.width.max, camera);
+        this.height.max = Utils.getHeight(this.width.max, camera);
+
+
+        // scene
 
         this.$scene = document.querySelector(selector);
-        this.$camera = document.createElement('div');
-        this.$camera.classList.add('planetary-camera');
-        this.$camera.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
-        this.$scene.appendChild(this.$camera);
         this.$scene.classList.add('planetary-system');
         this.$scene.style.width = this.width.max + 'px';
         this.$scene.style.height = this.height.max + 'px';
+        this.$scene.style.setProperty('--angle', this.camera.angle + 'deg');
 
-        renderer.call(this, data);
+
+        // camera
+
+        this.$camera = Utils.createElement('planetary-camera')
+        this.$camera.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
+        this.$scene.appendChild(this.$camera);
+
+
+        // objects
+
+        this.objects = objects.map(config => {
+            const object = new PlanetaryObject(config, this);
+            this.$camera.appendChild(object.$el);
+            return object;
+        });
+
+
         this.resize();
 
     }

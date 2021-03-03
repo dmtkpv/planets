@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LS Solar System</title>
+    <link rel="stylesheet" href="../planetary-system.css">
+    <script src="../planetary-system.js"></script>
+    <script src="config.js"></script>
+
+
+
+    <!--
+        Global styles
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        section {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background: #F1F7FF;
+        }
+        .planetary-system {
+            background: #222;
+        }
+        .planetary-camera {
+            border: 4px dashed #F00;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<!--
+    Solar system
+-->
+
+<section>
+    <div id="system"></div>
+
+
+    <div id="system2">
+        <div class="camera">
+
+
+            <div class="object">
+
+                <div class="body"></div>
+
+                <div class="object">
+                    <div class="body"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<!--
+    Zoom control
+-->
+
+<div id="zoom">
+    <button>+</button>
+    <input disabled>
+    <button>-</button>
+</div>
+
+
+<script>
+
+
+
+    // --------------------
+    // Config
+    // --------------------
+
+    const system = new PlanetarySystem('#system', planetaryConfig);
+
+
+
+    system.objects.forEach(planetObject => {
+
+        // click on the sun
+        //
+        //
+        // planetObject.$body.addEventListener('mouseenter', () => {
+        //     system.objects.forEach(object => object.pause());
+        // })
+        //
+        // planetObject.$body.addEventListener('mouseleave', () => {
+        //     system.objects.forEach(object => object.play());
+        // })
+        //
+        // planetObject.$body.addEventListener('click', () => {
+        //     // if (hasClass active) show note
+        //     // else
+        //     // planetObject.style.transform = ''
+        //     // move sun
+        //     // and class active
+        // })
+        //
+        //
+        //
+        // planetObject.objects.forEach(moonObject => {
+        //
+        //     planetObject.$el.addEventListener('mouseenter', () => {
+        //         system.orbits.forEach(planetOrbit => planetOrbit.pause());
+        //     })
+        //
+        //     planetObject.$el.addEventListener('mouseleave', () => {
+        //         system.orbits.forEach(planetOrbit => planetOrbit.play());
+        //     })
+        //
+        //     planetObject.orbits.forEach(moonOrbit => {
+        //         moonOrbit.objects.forEach(moonObject => {
+        //
+        //             moonObject.$el.addEventListener('mouseenter', () => {
+        //                 planetObject.orbits.forEach(moonOrbit => moonOrbit.pause());
+        //             })
+        //
+        //             moonObject.$el.addEventListener('mouseleave', () => {
+        //                 planetObject.orbits.forEach(moonOrbit => moonOrbit.play());
+        //             })
+        //         })
+        //     })
+        //
+        // })
+
+    })
+
+
+    // system.objects.forEach(object => {
+    //
+    //     object.$el.addEventListener('mouseenter', () => {
+    //         console.log('enter')
+    //     })
+    //
+    //     console.log(object)
+    // })
+
+    // $system.addEventListener('')
+
+
+
+
+
+    // --------------------
+    // Zoom
+    // --------------------
+
+    const $zoomVal = document.querySelector('#zoom input');
+    const $zoomIn = document.querySelector('#zoom button:first-child');
+    const $zoomOut = document.querySelector('#zoom button:last-child');
+
+    system.on('zoom', () => {
+        $zoomVal.value = Math.round(system.zoom.value);
+    })
+
+    $zoomIn.addEventListener('click', () => {
+        system.setZoom(system.zoom.value + 1);
+    });
+
+    $zoomOut.addEventListener('click', () => {
+        system.setZoom(system.zoom.value - 1);
+    });
+
+
+
+    // --------------------
+    // Hover
+    // --------------------
+
+    // system.on('zoom', () => {
+    //     $zoomVal.value = Math.round(system.zoom.value);
+    // })
+
+
+
+
+
+    // --------------------
+    // Resize
+    // --------------------
+
+    window.addEventListener('resize', () => {
+        system.resize();
+    });
+
+    system.resize();
+
+</script>
+
+
+</body>
+</html>

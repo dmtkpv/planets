@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            margin: 100px;
+        }
+
+        .spin {
+            width: 100px;
+            height: 100px;
+            animation: spin linear infinite;
+            background: rgba(0,0,0,0.1);
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg) }
+            100% { transform: rotate(360deg) }
+        }
+
+        .spin.s1 {
+            animation-duration: 10s;
+        }
+        .spin.s2 {
+            animation-duration: 7s;
+        }
+        .spin.s3 {
+            animation-duration: 4s;
+            background: #F00;
+        }
+
+        /*280 / 21*/
+
+        .spin.s4 {
+            animation-duration: 13.33s;
+            background: #F00;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="spin s1">
+        <div class="spin s2">
+            <div class="spin s3"></div>
+        </div>
+    </div>
+
+    <div class="spin s4">
+    </div>
+
+</body>
+</html>

@@ -26,18 +26,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader'
+                    'css-loader'
                 ]
             }
         ]
     },
 
     devServer: {
-        static: absPath('dist'),
+        static: 'dist',
         compress: true,
         port: 49041
     },
@@ -47,12 +46,6 @@ module.exports = {
             filename: 'planetary-system.css'
         })
     ],
-
-    resolve: {
-        alias: {
-            '@': absPath('src')
-        }
-    },
 
     output: {
         library: 'PlanetarySystem',
