@@ -14,7 +14,7 @@ const planetaryConfig = {
         return `
             <div class="object">
                 <img src="${data.image}">
-                <p>${data.title || ''}</p>
+                <p style="display: ${data.title ? '' : 'none'}">${data.title || ''}</p>
             </div>
         `
     },
@@ -32,10 +32,10 @@ const planetaryConfig = {
             animationDuration: 0,
             objects: [
                 {
-                    angle: 0,
+                    angle: 135,
                     body: {
                         size: 180,
-                        image: 'planets/sun.svg'
+                        image: 'planets/svg/sun.svg'
                     }
                 }
             ]
@@ -60,7 +60,8 @@ const planetaryConfig = {
                     angle: 0,
                     body: {
                         size: 120,
-                        image: 'planets/planet-purple-1.svg'
+                        image: 'planets/svg/planet-purple-1.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -71,21 +72,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -98,28 +102,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -134,7 +142,8 @@ const planetaryConfig = {
                     angle: 180,
                     body: {
                         size: 120,
-                        image: 'planets/planet-blue-2.svg'
+                        image: 'planets/svg/planet-blue-2.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -145,42 +154,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -208,7 +223,8 @@ const planetaryConfig = {
                     angle: 90,
                     body: {
                         size: 120,
-                        image: 'planets/planet-blue-1.svg'
+                        image: 'planets/svg/planet-blue-1.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -219,14 +235,16 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -239,7 +257,8 @@ const planetaryConfig = {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -254,7 +273,8 @@ const planetaryConfig = {
                     angle: 210,
                     body: {
                         size: 120,
-                        image: 'planets/planet-red-1.svg'
+                        image: 'planets/svg/planet-red-1.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -265,42 +285,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -315,7 +341,8 @@ const planetaryConfig = {
                     angle: 330,
                     body: {
                         size: 120,
-                        image: 'planets/planet-yellow.svg'
+                        image: 'planets/svg/planet-yellow.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -326,21 +353,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -353,28 +383,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -402,7 +436,8 @@ const planetaryConfig = {
                     angle: 15,
                     body: {
                         size: 120,
-                        image: 'planets/planet-blue-3.svg'
+                        image: 'planets/svg/planet-blue-3.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -413,21 +448,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -440,28 +478,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -476,7 +518,8 @@ const planetaryConfig = {
                     angle: 60,
                     body: {
                         size: 120,
-                        image: 'planets/planet-purple-2.svg'
+                        image: 'planets/svg/planet-purple-2.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -487,42 +530,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -537,7 +586,8 @@ const planetaryConfig = {
                     angle: 105,
                     body: {
                         size: 120,
-                        image: 'planets/planet-red-2.svg'
+                        image: 'planets/svg/planet-red-2.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -548,21 +598,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -575,28 +628,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -611,7 +668,8 @@ const planetaryConfig = {
                     angle: 150,
                     body: {
                         size: 120,
-                        image: 'planets/planet-yellow.svg'
+                        image: 'planets/svg/planet-yellow.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -622,42 +680,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -673,7 +737,8 @@ const planetaryConfig = {
                     angle: 195,
                     body: {
                         size: 120,
-                        image: 'planets/planet-purple-2.svg'
+                        image: 'planets/svg/planet-purple-2.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -684,21 +749,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -711,28 +779,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -747,7 +819,8 @@ const planetaryConfig = {
                     angle: 240,
                     body: {
                         size: 120,
-                        image: 'planets/planet-red-3.svg'
+                        image: 'planets/svg/planet-red-3.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -758,42 +831,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -808,7 +887,8 @@ const planetaryConfig = {
                     angle: 285,
                     body: {
                         size: 120,
-                        image: 'planets/planet-blue-1.svg'
+                        image: 'planets/svg/planet-blue-1.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -819,21 +899,24 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -846,28 +929,32 @@ const planetaryConfig = {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 150,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 310,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-blue.svg'
+                                        image: 'planets/svg/moon-blue.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -882,7 +969,8 @@ const planetaryConfig = {
                     angle: 320,
                     body: {
                         size: 120,
-                        image: 'planets/planet-red-1.svg'
+                        image: 'planets/svg/planet-red-1.svg',
+                        title: 'Vocabulary'
                     },
                     orbits: [
                         {
@@ -893,42 +981,48 @@ const planetaryConfig = {
                                     angle: 0,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 60,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 120,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 180,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-yellow.svg'
+                                        image: 'planets/svg/moon-yellow.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 240,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-purple.svg'
+                                        image: 'planets/svg/moon-purple.svg',
+                                        title: 'Vocabulary'
                                     },
                                 },
                                 {
                                     angle: 300,
                                     body: {
                                         size: 50,
-                                        image: 'planets/moon-red.svg'
+                                        image: 'planets/svg/moon-red.svg',
+                                        title: 'Vocabulary'
                                     },
                                 }
                             ]
@@ -937,174 +1031,7 @@ const planetaryConfig = {
                 }
             ]
         }
-    ],
-
-
-    objects: [
-        {
-            rotateZ: 135,
-            translateX: 1200,
-            animationDuration: 0,
-            body: {
-                size: 200,
-                title: 'Fluency'
-            }
-        },
-        {
-            rotateZ: 120,
-            translateX: 300,
-            animationDuration: 10,
-            body: {
-                size: 100,
-                title: 'Fluency'
-            },
-            objects: [
-                {
-                    rotateZ: 0,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 120,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 240,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                }
-            ]
-        },
-        {
-            rotateZ: 240,
-            translateX: 300,
-            animationDuration: 10,
-            body: {
-                size: 100,
-                title: 'Fluency'
-            },
-            objects: [
-                {
-                    rotateZ: 0,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        image: 'planets/vocabulary.svg',
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 120,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 240,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                }
-            ]
-        },
-        {
-            rotateZ: 0,
-            translateX: 600,
-            animationDuration: 10,
-            body: {
-                size: 100,
-                title: 'Fluency'
-            },
-            objects: [
-                {
-                    rotateZ: 0,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 120,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                },
-                {
-                    rotateZ: 240,
-                    translateX: 100,
-                    animationDuration: 8,
-                    body: {
-                        size: 50,
-                        title: 'Fluency'
-                    }
-                }
-            ]
-        }
     ]
-
-    // clusters: [
-    //     {
-    //         rotateZ: 57,
-    //         translateX: 400,
-    //         animationDuration: 10,
-    //         planets: [
-    //             // {
-    //             //     id: '01',
-    //             //     rotateZ: 0,
-    //             //     translateX: 0,
-    //             //     animationDuration: 0,
-    //             //     size: 100,
-    //             //     title: 'Fluency'
-    //             // },
-    //             {
-    //                 id: '02',
-    //                 rotateZ: 0,
-    //                 translateX: 150,
-    //                 animationDuration: 10,
-    //                 planet: {
-    //                     size: 20,
-    //                     title: 'Fluency'
-    //                 }
-    //             },
-    //             // {
-    //             //     id: '02',
-    //             //     rotateZ: 90,
-    //             //     translateX: 150,
-    //             //     animationDuration: 10,
-    //             //     size: 30,
-    //             //     title: 'Fluency'
-    //             // }
-    //         ]
-    //
-    //     }
-    // ],
-
-
 
 
 }

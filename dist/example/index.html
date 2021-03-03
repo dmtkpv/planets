@@ -19,6 +19,7 @@
         }
         body {
             margin: 0;
+            font-family: Arial, sans-serif;
         }
         section {
             height: 80vh;
@@ -30,7 +31,7 @@
             /*background: #222;*/
         }
         .planetary-camera {
-            border: 4px dashed #F00;
+            /*border: 4px dashed #F00;*/
         }
         .planetary-body {
             /*background: rgba(255,0,0,1);*/
@@ -39,15 +40,33 @@
             /*background: rgba(255,0,0,1);*/
         }
 
+        .planetary-orbit {
+            border: 3px dashed #8FC2FF;
+        }
+
+
+
         .object img {
             width: 100%;
+        }
+        .object p {
+            text-align: center;
+            background: #D2E5FF;
+            color: #0A69D2;
+            border: 2px solid #FFF;
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .planetary-object .planetary-orbit {
             opacity: 0;
             transition: opacity .3s ease;
         }
-        .planetary-object.hovered .planetary-orbit {
+        .planetary-object.hovered .planetary-orbit,
+        .planetary-object.active .planetary-orbit {
             opacity: 1;
         }
 
@@ -142,30 +161,81 @@
     const system = new PlanetarySystem('#system', planetaryConfig);
 
 
+    const sun = system.orbits[0].objects[0];
+    let active = null;
+
+
     system.orbits.forEach(orbit => {
 
         orbit.objects.forEach(object => {
 
 
             object.$body.addEventListener('mouseenter', () => {
+                if (object === sun) return;
                 system.orbits.forEach(orbit => orbit.pause());
                 object.$el.classList.add('hovered');
             })
 
             object.$body.addEventListener('mouseleave', () => {
+                if (object === sun) return;
                 system.orbits.forEach(orbit => orbit.play());
                 object.$el.classList.remove('hovered');
             })
 
             object.$body.addEventListener('click', () => {
 
-                if (object.$el.classList.contains('active')) {
-                    object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(${object.parentOrbit.diameter / 2}px)`;
+                if (object === sun && !active) return;
+
+                if (object === sun) {
+                    sun.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0px)`;
+                    active.$el.classList.remove('active');
+                    active.$el.style.transform = `rotateZ(${active.angle}deg) translateX(${active.parentOrbit.diameter / 2}px)`;
+                    active = null;
+                    return
+                }
+
+
+                if (active) {
+                    active.$el.classList.remove('active');
+                    active.$el.style.transform = `rotateZ(${active.angle}deg) translateX(${active.parentOrbit.diameter / 2}px)`;
+                }
+                if (active !== object) {
+                    active = object;
+                    object.$el.classList.add('active');
+                    object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0)`;
+                    sun.$el.style.transform = `rotateZ(${sun.angle}deg) translateX(${1200}px)`;
                 }
                 else {
-                    object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0)`;
+                    sun.$el.style.transform = `rotateZ(${sun.angle}deg) translateX(${0}px)`;
                 }
-                object.$el.classList.toggle('active');
+
+
+                //
+                // if (active) {
+                //     active.$el.classList.remove('active');
+                //     active.$el.style.transform = `rotateZ(${active.angle}deg) translateX(${active.parentOrbit.diameter / 2}px)`;
+                // }
+                // if (active === object) {
+                //     active = null;
+                // }
+                // else {
+                //     active = object;
+                //     object.$el.classList.add('active');
+                //     object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0)`;
+                // }
+                // if (active) {
+                //     sun.$el.style.transform = `rotateZ(${object.angle}deg) translateX(${1200}px)`;
+                // }
+                //
+
+                //
+                // if (object.$el.classList.contains('active')) {
+                //     object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(${object.parentOrbit.diameter / 2}px)`;
+                // }
+                // else {
+                //     object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0)`;
+                // }
+                // object.$el.classList.toggle('active');
             })
 
         })
