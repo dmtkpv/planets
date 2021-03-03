@@ -14,27 +14,17 @@
             height: 100px;
             animation: spin linear infinite;
             background: rgba(0,0,0,0.1);
+            margin-bottom: 100px;
         }
         @keyframes spin {
             0% { transform: rotate(0deg) }
             100% { transform: rotate(360deg) }
         }
 
-        .spin.s1 {
-            animation-duration: 10s;
-        }
-        .spin.s2 {
-            animation-duration: 7s;
-        }
-        .spin.s3 {
-            animation-duration: 4s;
-            background: #F00;
-        }
-
-        /*280 / 21*/
 
         .spin.s4 {
-            animation-duration: 13.33s;
+            --duration: 2s;
+            animation-duration: var(--duration);
             background: #F00;
         }
 
@@ -44,14 +34,19 @@
 </head>
 <body>
 
-    <div class="spin s1">
-        <div class="spin s2">
-            <div class="spin s3"></div>
-        </div>
+
+    <div class="spin s4">asdasd
     </div>
 
-    <div class="spin s4">
-    </div>
+    <button>Change</button>
+
+    <script>
+
+        document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('div').style.setProperty('--duration',  Math.random() * 10 + 's');
+        })
+
+    </script>
 
 </body>
 </html>

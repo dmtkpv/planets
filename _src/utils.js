@@ -7,7 +7,7 @@ export default {
         return width - width / 2 - (y - width / 2) * perspective / (perspective - z);
     },
 
-    createElement (className) {
+    createElement (className, styles) {
         const $div = document.createElement('div');
         $div.className = className;
         return $div;

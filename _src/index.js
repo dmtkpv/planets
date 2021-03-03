@@ -1,6 +1,6 @@
 import './styles.css'
+import PlanetaryObject from './object'
 import Utils from './utils'
-import PlanetaryOrbit from './orbit'
 
 export default class PlanetarySystem {
 
@@ -10,14 +10,13 @@ export default class PlanetarySystem {
     // Constructor
     // ----------------------
 
-    constructor (selector, { camera, canvas, renderBody, orbits }) {
+    constructor (selector, { camera, canvas, objects }) {
 
 
         // config
 
         this.events = {};
         this.camera = camera;
-        this.renderBody = renderBody;
 
         this.zoom = {};
         this.zoom.max = 1;
@@ -36,37 +35,30 @@ export default class PlanetarySystem {
         this.$scene.classList.add('planetary-system');
         this.$scene.style.width = this.width.max + 'px';
         this.$scene.style.height = this.height.max + 'px';
-        this.$scene.style.setProperty('--camera-angle', this.camera.angle + 'deg');
+        this.$scene.style.setProperty('--angle', this.camera.angle + 'deg');
 
 
-        // rings
+        // orbits
 
-        this.$rings = Utils.createElement('planetary-camera planetary-camera--rings')
-        this.$rings.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
-        this.$scene.appendChild(this.$rings);
-
-
-        // canvas
-
-        this.$canvas = Utils.createElement('planetary-camera planetary-camera--canvas')
-        this.$canvas.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
-        this.$scene.appendChild(this.$canvas);
-
-        this.orbits = orbits.map(config => {
-            const orbit = new PlanetaryOrbit(config, null, this);
-            this.$canvas.appendChild(orbit.$el);
-            // this.$rings.appendChild(orbit.$el);
-            return orbit;
-        })
+        this.$orbits = Utils.createElement('planetary-camera')
+        this.$orbits.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
+        this.$scene.appendChild(this.$orbits);
 
 
-        // // objects
-        //
-        // this.objects = objects.map(config => {
-        //     const object = new PlanetaryObject(config, this);
-        //     this.$objects.appendChild(object.$el);
-        //     return object;
-        // });
+        // camera
+
+        this.$objects = Utils.createElement('planetary-camera')
+        this.$objects.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
+        this.$scene.appendChild(this.$objects);
+
+
+        // objects
+
+        this.objects = objects.map(config => {
+            const object = new PlanetaryObject(config, this);
+            this.$objects.appendChild(object.$el);
+            return object;
+        });
 
 
         this.resize();

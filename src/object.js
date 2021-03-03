@@ -1,22 +1,53 @@
 import Utils from './utils'
+import PlanetaryOrbit from './orbit'
 
 
 
 // ----------------------
-// Configs
+// Helpers
 // ----------------------
 
-const defaultConfig = {
-    rotateZ: 0,
-    translateX: 0,
-    animationDuration: 0,
-    body: null,
-    objects: []
+const defaults = {
+    angle: 0,
+    diameter: 0,
+    orbits: []
 }
 
-const defaultDepth = {
-    rotateZ: [],
-    animationDuration: [],
+function getOrbitAngle ( $el ) {
+    const matrix = getComputedStyle($el).getPropertyValue('transform');
+    if (!matrix) return 0;
+    const values = matrix.split('(')[1].split(')')[0].split(',');
+    let radians = Math.atan2(values[1], values[0]);
+    if (radians < 0) radians += (2 * Math.PI);
+    return radians * 180 / Math.PI;
+}
+
+function getBodyAngle (parent) {
+    let angle = 0;
+    while (parent) {
+        if (parent instanceof PlanetaryObject) angle -= parent.angle;
+        if (parent instanceof PlanetaryOrbit) angle -= getOrbitAngle(parent.$el);
+        parent = parent.parentOrbit || parent.parentObject;
+    }
+    return angle;
+}
+
+function getBodyDuration (orbit) {
+    let durations = [];
+    while (orbit) {
+        if (orbit.animationDuration) durations.push(orbit.animationDuration);
+        orbit = orbit.parentObject && orbit.parentObject.parentOrbit
+    }
+    if (!durations.length) return 0;
+    return 1 / durations.reduce((a, b) => a + 1 / b, 0);
+}
+
+function restartBody (object) {
+    object.$body.style.animation = 'none';
+    object.$body.offsetHeight;
+    object.$body.style.animation = '';
+    object.$body.style.setProperty('--angle', getBodyAngle(object) + 'deg');
+    object.$body.style.setProperty('--duration', getBodyDuration(object.parentOrbit) + 's');
 }
 
 
@@ -27,55 +58,41 @@ const defaultDepth = {
 
 export default class PlanetaryObject {
 
-    constructor (config, system, depth = defaultDepth) {
+    constructor (config, orbit, system) {
 
-        Object.assign(this, defaultConfig, config);
+        Object.assign(this, defaults, config);
+
+        this.config = { ...config };
+        this.parentOrbit = orbit;
 
         this.$el = Utils.createElement('planetary-object');
-        this.$el.style.setProperty('--duration', this.animationDuration + 's');
-        this.$el.style.setProperty('--translateX', this.translateX + 'px');
-        this.$el.style.setProperty('--rotateZ', this.rotateZ + 'deg');
+        this.$el.style.setProperty('--angle', this.angle + 'deg');
+        this.$el.style.setProperty('--translate', orbit.diameter / 2 + 'px');
 
-        depth = Utils.clone(depth);
-        depth.rotateZ.push(this.rotateZ);
-        depth.animationDuration.push(this.animationDuration);
+        this.orbits = this.orbits.map(config => {
+            const orbit = new PlanetaryOrbit(config, this, system);
+            this.$el.appendChild(orbit.$el);
+            return orbit;
+        })
 
-        if (this.body) {
-            const rotateZ = depth.rotateZ.reduce((a, b) => a + b);
-            const durations = depth.animationDuration.filter(value => value > 0);
-            const duration = 1 / durations.reduce((a, b) => a + 1 / b, 0);
+        if (config.body) {
             this.$body = Utils.createElement('planetary-body');
-            this.$body.style.width = this.body.size + 'px';
-            this.$body.style.height = this.body.size + 'px';
-            this.$body.style.setProperty('--duration', duration + 's');
-            this.$body.style.setProperty('--rotateZ', -rotateZ + 'deg');
-
-            if (this.body.image) {
-                const $img = document.createElement('img');
-                $img.src = this.body.image;
-                this.$body.appendChild($img);
-            }
-
+            this.$body.style.width = this.$body.style.height = config.body.size + 'px';
+            this.$body.innerHTML = system.renderBody(config.body);
+            this.$body.style.setProperty('--duration', getBodyDuration(orbit)  + 's');
+            this.$body.style.setProperty('--angle', getBodyAngle(this) + 'deg');
+            system.on('pause:orbit', orbit => restartBody(this));
+            system.on('play:orbit', orbit =>  restartBody(this));
             this.$el.appendChild(this.$body);
         }
 
-        this.objects = this.objects.map(config => {
-            const object = new PlanetaryObject(config, system, depth);
-            this.$el.appendChild(object.$el);
-            return object;
-        });
+        orbit.$el.appendChild(this.$el);
 
     }
 
-    pause () {
-        this.$el.style.animationPlayState = 'paused';
-        this.objects.forEach(object => {
 
-        })
-    }
+    translateTo () {
 
-    play () {
-        this.$el.style.animationPlayState = '';
     }
 
 }

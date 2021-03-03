@@ -7,7 +7,6 @@
     transform-origin: 0 0;
 }
 .planetary-system * {
-    position: absolute;
     transform-style: preserve-3d;
 }
 
@@ -18,6 +17,7 @@
 */
 
 .planetary-camera {
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -25,25 +25,63 @@
 }
 
 
+.planetary-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    animation: planetary-orbit linear infinite forwards;
+    border: 3px dashed #000;
+}
+@keyframes planetary-orbit {
+    0%   { transform: translate(-50%, -50%) rotateZ(0deg) }
+    100% { transform: translate(-50%, -50%) rotateZ(360deg) }
+}
+
 
 /*
     Object
 */
 
 .planetary-object {
+    position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%) rotateZ(var(--angle)) translateX(var(--translate));
+}
 
-    /*width: 30px;*/
-    /*height: 30px;*/
-    /*background: #00F;*/
-    transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) translateX(var(--translateX));
-    animation: planetary-object var(--duration) linear infinite;
+.planetary-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: planetary-body var(--duration) linear infinite forwards;
 }
-@keyframes planetary-object {
-    0%   { transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) translateX(var(--translateX)) }
-    100% { transform: translate(-50%, -50%) rotateZ(calc(var(--rotateZ) + 360deg)) translateX(var(--translateX)) }
+@keyframes planetary-body {
+    0%   { transform: translate(-50%, -50%) rotateZ(var(--angle)) rotateX(calc(var(--camera-angle) * -1)) }
+    100% { transform: translate(-50%, -50%) rotateZ(calc(var(--angle) - 360deg)) rotateX(calc(var(--camera-angle) * -1)) }
 }
+
+
+
+/*.planetary-body {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.planetary-object {*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+
+/*    !*width: 30px;*!*/
+/*    !*height: 30px;*!*/
+/*    !*background: #00F;*!*/
+/*    transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) translateX(var(--translateX));*/
+/*    animation: planetary-object var(--duration) linear infinite;*/
+/*}*/
+/*@keyframes planetary-object {*/
+/*    0%   { transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) translateX(var(--translateX)) }*/
+/*    100% { transform: translate(-50%, -50%) rotateZ(calc(var(--rotateZ) + 360deg)) translateX(var(--translateX)) }*/
+/*}*/
 
 
 
@@ -51,15 +89,15 @@
     Body
 */
 
-.planetary-body {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) rotateX(calc(var(--angle) * -1));
-    animation: planetary-body var(--duration) linear infinite;
-    background: #F00;
-    border-radius: 50%;
-}
-@keyframes planetary-body {
-    0%   { transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) rotateX(calc(var(--angle) * -1)) }
-    100% { transform: translate(-50%, -50%) rotateZ(calc(var(--rotateZ) - 360deg)) rotateX(calc(var(--angle) * -1)) }
-}
+/*.planetary-body {*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) rotateX(calc(var(--angle) * -1));*/
+/*    animation: planetary-body var(--duration) linear infinite;*/
+/*    background: #F00;*/
+/*    border-radius: 50%;*/
+/*}*/
+/*@keyframes planetary-body {*/
+/*    0%   { transform: translate(-50%, -50%) rotateZ(var(--rotateZ)) rotateX(calc(var(--angle) * -1)) }*/
+/*    100% { transform: translate(-50%, -50%) rotateZ(calc(var(--rotateZ) - 360deg)) rotateX(calc(var(--angle) * -1)) }*/
+/*}*/

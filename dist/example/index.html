@@ -27,10 +27,32 @@
             background: #F1F7FF;
         }
         .planetary-system {
-            background: #222;
+            /*background: #222;*/
         }
         .planetary-camera {
             border: 4px dashed #F00;
+        }
+        .planetary-body {
+            /*background: rgba(255,0,0,1);*/
+        }
+        .planetary-body * {
+            /*background: rgba(255,0,0,1);*/
+        }
+
+        .object img {
+            width: 100%;
+        }
+
+        .planetary-object .planetary-orbit {
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        .planetary-object.hovered .planetary-orbit {
+            opacity: 1;
+        }
+
+        .planetary-object {
+            transition: transform 1s;
         }
 
 
@@ -49,24 +71,49 @@
 <section>
     <div id="system"></div>
 
-
     <div id="system2">
+
+        <!--
+
+        object.translateTo(0)
+        object.translateTo(ring.radius)
+
+        from: object.style.transform = `rotate(angle) translateX(radius)`
+          to: object.style.transform = `rotate(angle) translateX(0)`
+        -->
+
         <div class="camera">
 
-
-            <div class="object">
-
-                <div class="body"></div>
-
+            <div class="spin">
                 <div class="object">
                     <div class="body"></div>
                 </div>
-
             </div>
 
-
+            <div class="spin"> <!-- rotation animation, radius -->
+                <div class="object"> <!-- angle, translateX = radius -->
+                    <div class="spin">
+                        <div class="object"></div>
+                    </div>
+                    <div class="spin"> <!-- rotation animation, radius -->
+                        <div class="object"></div>
+                        <div class="object"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="camera">
+            <div class="ring">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+        </div>
+
+
+
     </div>
+
 
 
 </section>
@@ -95,68 +142,37 @@
     const system = new PlanetarySystem('#system', planetaryConfig);
 
 
+    system.orbits.forEach(orbit => {
 
-    system.objects.forEach(planetObject => {
+        orbit.objects.forEach(object => {
 
-        // click on the sun
-        //
-        //
-        // planetObject.$body.addEventListener('mouseenter', () => {
-        //     system.objects.forEach(object => object.pause());
-        // })
-        //
-        // planetObject.$body.addEventListener('mouseleave', () => {
-        //     system.objects.forEach(object => object.play());
-        // })
-        //
-        // planetObject.$body.addEventListener('click', () => {
-        //     // if (hasClass active) show note
-        //     // else
-        //     // planetObject.style.transform = ''
-        //     // move sun
-        //     // and class active
-        // })
-        //
-        //
-        //
-        // planetObject.objects.forEach(moonObject => {
-        //
-        //     planetObject.$el.addEventListener('mouseenter', () => {
-        //         system.orbits.forEach(planetOrbit => planetOrbit.pause());
-        //     })
-        //
-        //     planetObject.$el.addEventListener('mouseleave', () => {
-        //         system.orbits.forEach(planetOrbit => planetOrbit.play());
-        //     })
-        //
-        //     planetObject.orbits.forEach(moonOrbit => {
-        //         moonOrbit.objects.forEach(moonObject => {
-        //
-        //             moonObject.$el.addEventListener('mouseenter', () => {
-        //                 planetObject.orbits.forEach(moonOrbit => moonOrbit.pause());
-        //             })
-        //
-        //             moonObject.$el.addEventListener('mouseleave', () => {
-        //                 planetObject.orbits.forEach(moonOrbit => moonOrbit.play());
-        //             })
-        //         })
-        //     })
-        //
-        // })
+
+            object.$body.addEventListener('mouseenter', () => {
+                system.orbits.forEach(orbit => orbit.pause());
+                object.$el.classList.add('hovered');
+            })
+
+            object.$body.addEventListener('mouseleave', () => {
+                system.orbits.forEach(orbit => orbit.play());
+                object.$el.classList.remove('hovered');
+            })
+
+            object.$body.addEventListener('click', () => {
+
+                if (object.$el.classList.contains('active')) {
+                    object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(${object.parentOrbit.diameter / 2}px)`;
+                }
+                else {
+                    object.$el.style.transform = `rotateZ(${object.angle}deg) translateX(0)`;
+                }
+                object.$el.classList.toggle('active');
+            })
+
+        })
 
     })
 
 
-    // system.objects.forEach(object => {
-    //
-    //     object.$el.addEventListener('mouseenter', () => {
-    //         console.log('enter')
-    //     })
-    //
-    //     console.log(object)
-    // })
-
-    // $system.addEventListener('')
 
 
 
