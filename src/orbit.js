@@ -1,5 +1,5 @@
 import Utils from './utils'
-import PlanetaryObject from './object'
+import Point from './point'
 
 
 
@@ -10,7 +10,7 @@ import PlanetaryObject from './object'
 const defaults = {
     diameter: 0,
     animationDuration: 0,
-    objects: []
+    points: []
 }
 
 
@@ -19,34 +19,23 @@ const defaults = {
 // Exports
 // ----------------------
 
-export default class PlanetaryOrbit {
+export default class Orbit {
 
     constructor (config, object, system) {
 
         Object.assign(this, defaults, config);
 
-        this.config = { ...config };
+        const $el = Utils.createElement('ps-orbit');
+        $el.style.width = this.diameter + 'px';
+        $el.style.height = this.diameter + 'px';
+        $el.style.animationDuration = this.animationDuration + 's';
+
+        this.$bodiesEl = $el;
+        this.$orbitsEl = $el.cloneNode();
+
         this.parentObject = object;
+        this.points = this.points.map(config => new Point(config, this, system));
 
-        this.$el = Utils.createElement('planetary-orbit');
-        this.$el.style.width = this.diameter + 'px';
-        this.$el.style.height = this.diameter + 'px';
-        this.$el.style.animationDuration = this.animationDuration + 's';
-
-        this.objects = this.objects.map(config => new PlanetaryObject(config, this, system));
-
-    }
-
-    pause () {
-        this.$el.style.animationPlayState = 'paused'
-        this.animationDuration = 0;
-        system.emit('pause:orbit', this);
-    }
-
-    play () {
-        this.$el.style.animationPlayState = ''
-        this.animationDuration = this.config.animationDuration;
-        system.emit('play:orbit', this);
     }
 
 }

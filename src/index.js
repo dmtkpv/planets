@@ -1,6 +1,6 @@
 import './styles.css'
 import Utils from './utils'
-import PlanetaryOrbit from './orbit'
+import Orbit from './orbit'
 
 export default class PlanetarySystem {
 
@@ -33,43 +33,59 @@ export default class PlanetarySystem {
         // scene
 
         this.$scene = document.querySelector(selector);
-        this.$scene.classList.add('planetary-system');
+        this.$scene.classList.add('ps-scene');
         this.$scene.style.width = this.width.max + 'px';
         this.$scene.style.height = this.height.max + 'px';
         this.$scene.style.setProperty('--camera-angle', this.camera.angle + 'deg');
 
 
-        // rings
+        // orbits
 
-        this.$rings = Utils.createElement('planetary-camera planetary-camera--rings')
-        this.$rings.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
-        this.$scene.appendChild(this.$rings);
+        this.$orbits = Utils.createElement('ps-canvas ps-canvas--orbits')
+        this.$orbits.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
+        this.$scene.appendChild(this.$orbits);
 
 
-        // canvas
+        // bodies
 
-        this.$canvas = Utils.createElement('planetary-camera planetary-camera--canvas')
-        this.$canvas.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
-        this.$scene.appendChild(this.$canvas);
+        this.$bodies = Utils.createElement('ps-canvas ps-canvas--bodies')
+        this.$bodies.style.transform = `perspective(${camera.perspective}px) translateY(50%) rotateX(${camera.angle}deg) translateY(-50%)`;
+        this.$scene.appendChild(this.$bodies);
+
+
+        // renderer
+
+        function renderOrbits ($parent, orbit) {
+            $parent.appendChild(orbit.$orbitsEl);
+            orbit.points.forEach(point => {
+                orbit.$orbitsEl.appendChild(point.$orbitsEl);
+                point.orbits.forEach(orbit => renderOrbits(orbit.$orbitsEl, orbit));
+            })
+        }
+
+        function renderBodies ($parent, orbit) {
+            $parent.appendChild(orbit.$bodiesEl);
+            orbit.points.forEach(point => {
+                point.$body && point.$bodiesEl.appendChild(point.$body);
+                orbit.$bodiesEl.appendChild(point.$bodiesEl);
+                point.orbits.forEach(orbit => renderBodies(point.$bodiesEl, orbit));
+            })
+        }
 
         this.orbits = orbits.map(config => {
-            const orbit = new PlanetaryOrbit(config, null, this);
-            this.$canvas.appendChild(orbit.$el);
-            // this.$rings.appendChild(orbit.$el);
-            return orbit;
-        })
+            return new Orbit(config, null, this);
+        });
+
+        this.orbits.forEach(orbit => {
+            renderOrbits(this.$orbits, orbit);
+            // renderBodies(this.$bodies, orbit);
+        });
 
 
-        // // objects
-        //
-        // this.objects = objects.map(config => {
-        //     const object = new PlanetaryObject(config, this);
-        //     this.$objects.appendChild(object.$el);
-        //     return object;
-        // });
-
+        // resize
 
         this.resize();
+
 
     }
 
