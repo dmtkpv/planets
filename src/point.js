@@ -13,11 +13,40 @@ const defaults = {
     orbits: []
 }
 
-function getBodyAngle (object) {
+// function getBodyAngle (object) {
+//     let angle = 0;
+//     while (object) {
+//         angle -= object.angle;
+//         object = object.parentOrbit && object.parentOrbit.parentObject;
+//     }
+//     return angle;
+// }
+//
+// function getBodyDuration (orbit) {
+//     let durations = [];
+//     while (orbit) {
+//         orbit.animationDuration && durations.push(orbit.animationDuration);
+//         orbit = orbit.parentObject && orbit.parentObject.parentOrbit;
+//     }
+//     if (!durations.length) return 0;
+//     return 1 / durations.reduce((a, b) => a + 1 / b, 0);
+// }
+
+function getOrbitAngle ( $el ) {
+    const matrix = getComputedStyle($el).getPropertyValue('transform');
+    if (!matrix) return 0;
+    const values = matrix.split('(')[1].split(')')[0].split(',');
+    let radians = Math.atan2(values[1], values[0]);
+    if (radians < 0) radians += (2 * Math.PI);
+    return radians * 180 / Math.PI;
+}
+
+function getBodyAngle (parent) {
     let angle = 0;
-    while (object) {
-        angle -= object.angle;
-        object = object.parentOrbit && object.parentOrbit.parentObject;
+    while (parent) {
+        if (parent instanceof Point) angle -= parent.angle;
+        if (parent instanceof Orbit) angle -= getOrbitAngle(parent.$bodiesEl);
+        parent = parent.parentOrbit || parent.parentPoint;
     }
     return angle;
 }
@@ -25,11 +54,19 @@ function getBodyAngle (object) {
 function getBodyDuration (orbit) {
     let durations = [];
     while (orbit) {
-        orbit.animationDuration && durations.push(orbit.animationDuration);
-        orbit = orbit.parentObject && orbit.parentObject.parentOrbit;
+        if (orbit.animationDuration) durations.push(orbit.animationDuration);
+        orbit = orbit.parentPoint && orbit.parentPoint.parentOrbit
     }
     if (!durations.length) return 0;
     return 1 / durations.reduce((a, b) => a + 1 / b, 0);
+}
+
+function restartBody (object) {
+    object.$body.style.animation = 'none';
+    object.$body.offsetHeight;
+    object.$body.style.animation = '';
+    object.$body.style.setProperty('--angle', getBodyAngle(object) + 'deg');
+    object.$body.style.setProperty('--duration', getBodyDuration(object.parentOrbit) + 's');
 }
 
 
@@ -38,7 +75,7 @@ function getBodyDuration (orbit) {
 // Exports
 // ----------------------
 
-export default class PlanetaryObject {
+export default class Point {
 
     constructor (config, orbit, system, level) {
 
@@ -60,6 +97,8 @@ export default class PlanetaryObject {
             this.$body.innerHTML = system.renderBody(config.body);
             this.$body.style.setProperty('--duration', getBodyDuration(orbit)  + 's');
             this.$body.style.setProperty('--angle', getBodyAngle(this) + 'deg');
+            system.on('pause:orbit', orbit => restartBody(this));
+            system.on('play:orbit', orbit =>  restartBody(this));
         }
 
     }

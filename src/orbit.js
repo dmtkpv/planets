@@ -15,13 +15,20 @@ const defaults = {
 
 
 
+function restartAnimation (orbit) {
+    this.$bodiesEl.style.animation = 'none';
+    this.$bodiesEl.offsetHeight;
+    this.$bodiesEl.style.animationDuration = orbit.animationDuration;
+}
+
+
 // ----------------------
 // Exports
 // ----------------------
 
 export default class Orbit {
 
-    constructor (config, object, system, level) {
+    constructor (config, point, system, level) {
 
         Object.assign(this, defaults, config);
 
@@ -31,10 +38,12 @@ export default class Orbit {
         $el.style.animationDuration = this.animationDuration + 's';
 
         this.level = level;
+        this.system = system;
+        this.config = { ...config };
         this.$bodiesEl = $el;
         this.$orbitsEl = $el.cloneNode();
 
-        this.parentObject = object;
+        this.parentPoint = point;
         this.points = this.points.map(config => new Point(config, this, system, level));
 
     }
@@ -43,6 +52,29 @@ export default class Orbit {
         this.diameter = diameter;
         this.$bodiesEl.style.width = this.$orbitsEl.style.width = this.diameter + 'px';
         this.$bodiesEl.style.height = this.$orbitsEl.style.height = this.diameter + 'px';
+    }
+
+    // update () {
+    //     this.$bodiesEl.style.animationDuration = this.animationDuration + 's';
+    //     this.$bodiesEl.style.animationDuration = this.animationDuration + 's';
+    //
+    //     // / this.animationDuration = 0;
+    //     // this.system.emit('pause:orbit', this);
+    // }
+
+
+    pause () {
+        this.$bodiesEl.style.animationPlayState = 'paused'
+        this.$orbitsEl.style.animationPlayState = 'paused'
+        this.animationDuration = 0;
+        this.system.emit('pause:orbit', this);
+    }
+
+    play () {
+        this.$bodiesEl.style.animationPlayState = ''
+        this.$orbitsEl.style.animationPlayState = ''
+        this.animationDuration = this.config.animationDuration;
+        this.system.emit('play:orbit', this);
     }
 
 }

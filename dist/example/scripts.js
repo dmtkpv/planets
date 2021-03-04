@@ -182,6 +182,15 @@
 
 
 
+    const $play = document.getElementById('play');
+
+    $play.addEventListener('click', () => {
+        const active = $play.classList.contains('active');
+        $play.classList.toggle('active');
+        system.orbits.forEach(orbit => active ? orbit.play() : orbit.pause());
+    })
+
+
     // --------------------
     // Controls
     // --------------------
@@ -191,5 +200,29 @@
     $controls.addEventListener('click', () => {
         $controls.parentNode.classList.toggle('active');
     })
+
+
+
+
+    // --------------------
+    // Stars
+    // --------------------
+
+    const stars = 300;
+    const $stars = document.querySelector('#stars');
+
+    for (let i = 0; i < stars; i++) {
+        const $star = document.createElement('div');
+        const size = Math.random() * 4;
+        $star.style.left = $stars.offsetWidth * Math.random() + 'px';
+        $star.style.top = $stars.offsetHeight * Math.random() + 'px';
+        $star.style.width = $star.style.height = size + 'px';
+        $star.style.animationDuration = 2 + Math.random() * 2 + 's'
+        $star.style.animationDelay = -Math.random() * 4 + 's'
+
+        $stars.appendChild($star);
+    }
+
+
 
 })()
