@@ -29,6 +29,15 @@
         $note.style.display = 'none';
     })
 
+    document.addEventListener('click', event => {
+        let parent = event.target;
+        while (parent) {
+            if (parent === $note) return;
+            parent = parent.parentNode;
+        }
+        $note.style.display = 'none'
+    })
+
     function activate (index) {
         active = index;
         planets[active].$bodiesEl.classList.add('active');
