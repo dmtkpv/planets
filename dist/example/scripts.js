@@ -17,16 +17,23 @@
     const moons = planets.map(planet => planet.orbits.map(orbit => orbit.points).flat()).flat();
     let active = -1;
 
+
+    // note
+
     function showNote (body) {
         const $h1 = $note.querySelector('h1');
         const $p = $note.querySelector('p');
         $h1.textContent = body.title;
-        $p.textContent = body.note;
+        if (body.note) $p.textContent = body.note;
         $note.style.display = 'block';
     }
 
+    function hideNote () {
+        $note.style.display = 'none'
+    }
+
     $note.querySelector('a').addEventListener('click', () => {
-        $note.style.display = 'none';
+        hideNote();
     })
 
     document.addEventListener('click', event => {
@@ -35,8 +42,11 @@
             if (parent === $note) return;
             parent = parent.parentNode;
         }
-        $note.style.display = 'none'
+        hideNote();
     })
+
+
+    // planets
 
     function activate (index) {
         active = index;
@@ -191,6 +201,7 @@
     })
 
 
+
     // --------------------
     // Controls
     // --------------------
@@ -202,8 +213,7 @@
     })
 
 
-
-
+    
     // --------------------
     // Stars
     // --------------------
@@ -218,8 +228,7 @@
         $star.style.top = $stars.offsetHeight * Math.random() + 'px';
         $star.style.width = $star.style.height = size + 'px';
         $star.style.animationDuration = 2 + Math.random() * 2 + 's'
-        $star.style.animationDelay = -Math.random() * 4 + 's'
-
+        $star.style.animationDelay = -Math.random() * 4 + 's';
         $stars.appendChild($star);
     }
 
