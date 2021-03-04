@@ -12,7 +12,7 @@ const planetaryConfig = {
 
     renderBody (data) {
         return `
-            <div class="object">
+            <div class="body">
                 <img src="${data.image}">
                 <p style="display: ${data.title ? '' : 'none'}">${data.title || ''}</p>
             </div>

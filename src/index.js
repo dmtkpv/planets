@@ -10,7 +10,7 @@ export default class PlanetarySystem {
     // Constructor
     // ----------------------
 
-    constructor (selector, { camera, canvas, renderBody, orbits }) {
+    constructor ($scene, { camera, canvas, renderBody, orbits }) {
 
 
         // config
@@ -21,6 +21,13 @@ export default class PlanetarySystem {
 
         this.zoom = {};
         this.zoom.max = 1;
+        this.zoom.min = 1;
+        this.zoom.scale = 1;
+        this.zoom.value = 1;
+
+        this.translate = {};
+        this.translate.x = 0;
+        this.translate.y = 0;
 
         this.width = {};
         this.width.max = canvas.maxWidth;
@@ -32,7 +39,7 @@ export default class PlanetarySystem {
 
         // scene
 
-        this.$scene = document.querySelector(selector);
+        this.$scene = $scene;
         this.$scene.classList.add('ps-scene');
         this.$scene.style.width = this.width.max + 'px';
         this.$scene.style.height = this.height.max + 'px';
@@ -98,20 +105,28 @@ export default class PlanetarySystem {
     resize () {
         const w = this.$scene.parentNode.offsetWidth / this.width.max;
         const h = this.$scene.parentNode.offsetHeight / this.height.max;
-        this.zoom.min = Math.min(w, h);
+        this.zoom.min = Math.min(w, h, 1);
         this.zoom.min = Math.max(this.zoom.min, this.width.min / this.width.max);
-        this.setZoom(100);
+        this.zoomTo(100);
     }
 
-    setZoom (value) {
+    zoomTo (value) {
         value = Math.max(value, 100);
         value = Math.min(value, 100 * this.zoom.max / this.zoom.min);
-        const scale = value * this.zoom.min / 100;
-        const tx = (this.$scene.parentNode.offsetWidth - this.width.max * scale) / 2;
-        const ty = (this.$scene.parentNode.offsetHeight - this.height.max * scale) / 2;
         this.zoom.value = value;
-        this.$scene.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+        this.zoom.scale = value * this.zoom.min / 100;
+
+        this.translate.x = (this.$scene.parentNode.offsetWidth - this.width.max * this.zoom.scale) / 2;
+        this.translate.y = (this.$scene.parentNode.offsetHeight - this.height.max * this.zoom.scale) / 2;
+        this.$scene.style.transform = `translate(${this.translate.x}px, ${this.translate.y}px) scale(${this.zoom.scale})`;
         this.emit('zoom', value);
+    }
+
+    translateTo (x, y) {
+        this.translate.x = x;
+        this.translate.y = y;
+        this.$scene.style.transform = `translate(${this.translate.x}px, ${this.translate.y}px) scale(${this.zoom.scale})`;
+        this.emit('translate', this.translate);
     }
 
 

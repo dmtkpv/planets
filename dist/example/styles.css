@@ -1,22 +1,85 @@
+/*
+    Reset
+*/
 
-
-
-
- * {
+* {
      box-sizing: border-box;
- }
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-section {
+
+
+
+/*
+    Planetary system
+*/
+
+.system {
     height: 80vh;
     position: relative;
     overflow: hidden;
     background: #F1F7FF;
+    user-select: none;
 }
 
 
+/* body styles */
+
+.system .body img {
+    width: 100%;
+}
+.system .body p {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background: #D2E5FF;
+    color: #0A69D2;
+    border: 2px solid #FFF;
+}
+
+
+/* orbits */
+
+.ps-canvas--orbits .ps-orbit {
+    border: 3px dashed #8FC2FF;
+}
+.ps-canvas--orbits .ps-point .ps-orbit { /* invisible moon orbits */
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+.ps-canvas--orbits .ps-point.hover .ps-orbit, /* active/hovered planet point has visible moon orbits */
+.ps-canvas--orbits .ps-point.active .ps-orbit {
+    opacity: 1;
+}
+
+
+/* bodies */
+
+.ps-canvas--bodies .ps-point .ps-orbit .ps-body  { /* invisible moons */
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+.ps-canvas--bodies .ps-point.hover .ps-orbit .ps-body, /* active/hovered planet point has visible moons */
+.ps-canvas--bodies .ps-point.active .ps-orbit .ps-body {
+    opacity: 1;
+}
+
+
+/* point transition */
+
+.ps-canvas .ps-point {
+    transition: transform 1s;
+}
+
+
+
+/*
+    Controls
+*/
 
 #controls {
     position: fixed;
@@ -49,59 +112,5 @@ section {
 
 
 
-.planetary-system {
-    /*background: #222;*/
-}
-.planetary-camera {
-    /*border: 4px dashed #F00;*/
-}
-.planetary-body {
-    /*background: rgba(255,0,0,1);*/
-}
-.planetary-body * {
-    /*background: rgba(255,0,0,1);*/
-}
 
 
-.planetary-camera--orbits .planetary-orbit {
-    border: 3px dashed #8FC2FF;
-}
-
-
-
-.object img {
-    width: 100%;
-}
-.object p {
-    text-align: center;
-    background: #D2E5FF;
-    color: #0A69D2;
-    border: 2px solid #FFF;
-    display: inline-block;
-    padding: 10px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.planetary-camera--bodies .planetary-object  .planetary-orbit .planetary-body  {
-    opacity: 0;
-    transition: opacity .3s ease;
-}
-.planetary-camera--bodies .planetary-object.active  .planetary-orbit  .planetary-body {
-    opacity: 1;
-}
-
-.planetary-camera--orbits .planetary-object .planetary-orbit  {
-    opacity: 0;
-    transition: opacity .3s ease;
-}
-.planetary-camera--orbits .planetary-object.active .planetary-orbit {
-    opacity: 1;
-}
-
-
-
-.planetary-object {
-    transition: transform 1s;
-}
