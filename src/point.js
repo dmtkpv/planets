@@ -40,11 +40,11 @@ function getBodyDuration (orbit) {
 
 export default class PlanetaryObject {
 
-    constructor (config, orbit, system) {
+    constructor (config, orbit, system, level) {
 
         Object.assign(this, defaults, config);
 
-        const $el = Utils.createElement('ps-point');
+        const $el = Utils.createElement(`ps-point ps-level-${level}`);
         $el.style.setProperty('--angle', this.angle + 'deg');
         $el.style.setProperty('--translate', orbit.diameter / 2 + 'px');
 
@@ -52,7 +52,7 @@ export default class PlanetaryObject {
         this.$orbitsEl = $el.cloneNode();
 
         this.parentOrbit = orbit;
-        this.orbits = this.orbits.map(config => new Orbit(config, this, system));
+        this.orbits = this.orbits.map(config => new Orbit(config, this, system, level + 1));
 
         if (config.body) {
             this.$body = Utils.createElement('ps-body');

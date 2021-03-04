@@ -61,7 +61,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-purple-1.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -73,7 +74,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -81,7 +83,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -89,7 +92,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -103,7 +107,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -111,7 +116,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -119,7 +125,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -127,7 +134,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -143,7 +151,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-blue-2.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -155,7 +164,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -163,7 +173,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -171,7 +182,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -179,7 +191,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -187,7 +200,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -195,7 +209,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -224,7 +239,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-blue-1.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -236,7 +252,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -244,7 +261,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -258,7 +276,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -274,7 +293,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-red-1.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -286,7 +306,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -294,7 +315,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -302,7 +324,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -310,7 +333,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -318,7 +342,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -326,7 +351,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -342,7 +368,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-yellow.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -354,7 +381,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -362,7 +390,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -370,7 +399,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -384,7 +414,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -392,7 +423,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -400,7 +432,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -408,7 +441,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -437,7 +471,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-blue-3.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -449,7 +484,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -457,7 +493,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -465,7 +502,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -479,7 +517,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -487,7 +526,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -495,7 +535,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -503,7 +544,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -519,7 +561,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-purple-2.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -531,7 +574,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -539,7 +583,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -547,7 +592,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -555,7 +601,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -563,7 +610,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -571,7 +619,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -587,7 +636,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-red-2.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -599,7 +649,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -607,7 +658,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -615,7 +667,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -629,7 +682,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -637,7 +691,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -645,7 +700,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -653,7 +709,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -669,7 +726,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-yellow.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -681,7 +739,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -689,7 +748,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -697,7 +757,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -705,7 +766,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -713,7 +775,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -721,7 +784,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -738,7 +802,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-purple-2.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -750,7 +815,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -758,7 +824,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -766,7 +833,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -780,7 +848,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -788,7 +857,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -796,7 +866,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -804,7 +875,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -820,7 +892,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-red-3.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -832,7 +905,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -840,7 +914,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -848,7 +923,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -856,7 +932,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -864,7 +941,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -872,7 +950,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -888,7 +967,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-blue-1.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -900,7 +980,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -908,7 +989,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -916,7 +998,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -930,7 +1013,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -938,7 +1022,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -946,7 +1031,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -954,7 +1040,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-blue.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]
@@ -970,7 +1057,8 @@ const planetaryConfig = {
                     body: {
                         size: 120,
                         image: 'planets/svg/planet-red-1.svg',
-                        title: 'Vocabulary'
+                        title: 'Vocabulary',
+                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                     },
                     orbits: [
                         {
@@ -982,7 +1070,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -990,7 +1079,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -998,7 +1088,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -1006,7 +1097,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-yellow.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -1014,7 +1106,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-purple.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 },
                                 {
@@ -1022,7 +1115,8 @@ const planetaryConfig = {
                                     body: {
                                         size: 50,
                                         image: 'planets/svg/moon-red.svg',
-                                        title: 'Vocabulary'
+                                        title: 'Vocabulary',
+                                        note: 'Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.'
                                     },
                                 }
                             ]

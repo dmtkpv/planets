@@ -27,45 +27,69 @@ body {
 
 /* body styles */
 
-.system .body img {
-    width: 100%;
-}
-.system .body p {
-    display: inline-block;
+.body {
     position: relative;
+    width: 100%;
+    height: 100%;
+}
+.body img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.body p {
+    position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     padding: 10px;
-    background: #D2E5FF;
     color: #0A69D2;
     border: 2px solid #FFF;
+    transform: translateX(-50%);
 }
+.ps-point.ps-level-0 > .ps-body .body p {
+    bottom: 100%;
+    color: #FFFFFF;
+    background: #0A69D2;
+}
+.ps-point.ps-level-1 > .ps-body .body p {
+    top: 100%;
+    color: #0A69D2;
+    background: #D2E5FF;
+}
+
 
 
 /* orbits */
 
 .ps-canvas--orbits .ps-orbit {
     border: 3px dashed #8FC2FF;
-}
-.ps-canvas--orbits .ps-point .ps-orbit { /* invisible moon orbits */
-    opacity: 0;
     transition: opacity .5s ease;
 }
-.ps-canvas--orbits .ps-point.hover .ps-orbit, /* active/hovered planet point has visible moon orbits */
-.ps-canvas--orbits .ps-point.active .ps-orbit {
+.ps-canvas--orbits .ps-orbit.ps-level-1 { /* invisible moon orbits */
+    opacity: 0;
+}
+.ps-canvas--orbits .hover .ps-orbit.ps-level-1, /* active/hovered planet point has visible moon orbits */
+.ps-canvas--orbits .active .ps-orbit.ps-level-1 {
     opacity: 1;
+}
+.ps-scene.active .ps-canvas--orbits .ps-orbit.ps-level-0 {
+    opacity: 0.5;
 }
 
 
 /* bodies */
 
-.ps-canvas--bodies .ps-point .ps-orbit .ps-body  { /* invisible moons */
-    opacity: 0;
+.ps-canvas--bodies .ps-body {
     transition: opacity .5s ease;
 }
-.ps-canvas--bodies .ps-point.hover .ps-orbit .ps-body, /* active/hovered planet point has visible moons */
-.ps-canvas--bodies .ps-point.active .ps-orbit .ps-body {
+.ps-canvas--bodies .ps-point.ps-level-1 > .ps-body  { /* invisible moons */
+    opacity: 0;
+}
+.ps-canvas--bodies .hover .ps-point.ps-level-1 > .ps-body, /* active/hovered planet point has visible moons */
+.ps-canvas--bodies .active .ps-point.ps-level-1 > .ps-body {
     opacity: 1;
+}
+.ps-scene.active .ps-orbit:not(:first-child) .ps-point.ps-level-0:not(.active) > .ps-body {
+    opacity: 0.5;
 }
 
 
@@ -73,6 +97,17 @@ body {
 
 .ps-canvas .ps-point {
     transition: transform 1s;
+}
+
+
+
+/*
+    Nav
+*/
+
+#nav button.active {
+    background: #000;
+    color: #FFFFFF;
 }
 
 

@@ -80,7 +80,7 @@ export default class PlanetarySystem {
         }
 
         this.orbits = orbits.map(config => {
-            return new Orbit(config, null, this);
+            return new Orbit(config, null, this, 0);
         });
 
         this.orbits.forEach(orbit => {
