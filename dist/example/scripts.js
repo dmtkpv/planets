@@ -48,16 +48,37 @@
 
     // planets
 
+    const diameters = system.orbits.map(orbit => orbit.diameter);
+
+    function orbitsIn () {
+        system.orbits.forEach((orbit, i) => {
+            orbit.setDiameter(diameters[i]);
+            orbit.points.forEach(point => point.move());
+        })
+    }
+
+    function orbitsOut () {
+        system.orbits.forEach((orbit, i) => {
+            orbit.setDiameter(system.width.max - 200 * (system.orbits.length - 1 - i));
+            orbit.points.forEach(point => point.move());
+        })
+    }
+
+
+    // console
+
     function activate (index) {
+        orbitsOut();
         active = index;
         planets[active].$bodiesEl.classList.add('active');
         planets[active].$orbitsEl.classList.add('active');
         planets[active].move(0);
 
-        planets[active].orbits.forEach(orbit => {
-            orbit.setDiameter(800);
-            orbit.points.forEach(point => point.update());
-        })
+
+        // planets[active].orbits.forEach(orbit => {
+        //     orbit.setDiameter(800);
+        //     orbit.points.forEach(point => point.update());
+        // })
 
         $links[active].classList.add('active');
         $system.classList.add('active');
@@ -66,6 +87,7 @@
 
     function deactivate () {
         if (!planets[active]) return;
+        orbitsIn();
         planets[active].$bodiesEl.classList.remove('active');
         planets[active].$orbitsEl.classList.remove('active');
         planets[active].$bodiesEl.classList.remove('hover');
@@ -100,11 +122,13 @@
         planet.$bodiesEl.addEventListener('click', () => {
             if (active === index) return showNote(planet.body);
 
-            system.orbits.forEach(orbit => {
-                orbit.setDiameter(orbit.diameter * 2);
-                planets.forEach(planet => planet.update());
-                // if (orbit !== planet.parentOrbit) orbit.setDiameter(orbit.diameter * 2);
-            })
+
+
+            // system.orbits.forEach(orbit => {
+            //     orbit.setDiameter(orbit.diameter * 2);
+            //     planets.forEach(planet => planet.update());
+            //     // if (orbit !== planet.parentOrbit) orbit.setDiameter(orbit.diameter * 2);
+            // })
 
             // console.log(planet)
 
