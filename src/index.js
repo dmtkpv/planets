@@ -59,7 +59,7 @@ export default class PlanetarySystem {
             $parent.appendChild(orbit.$orbitsEl);
             orbit.points.forEach(point => {
                 orbit.$orbitsEl.appendChild(point.$orbitsEl);
-                point.orbits.forEach(orbit => renderOrbits(orbit.$orbitsEl, orbit));
+                point.orbits.forEach(orbit => renderOrbits(point.$orbitsEl, orbit));
             })
         }
 
@@ -78,7 +78,7 @@ export default class PlanetarySystem {
 
         this.orbits.forEach(orbit => {
             renderOrbits(this.$orbits, orbit);
-            // renderBodies(this.$bodies, orbit);
+            renderBodies(this.$bodies, orbit);
         });
 
 
