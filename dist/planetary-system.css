@@ -73,3 +73,5 @@
     0%   { transform: translate(-50%, -50%) rotateZ(var(--angle)) rotateX(calc(var(--camera-angle) * -1)) }
     100% { transform: translate(-50%, -50%) rotateZ(calc(var(--angle) - 360deg)) rotateX(calc(var(--camera-angle) * -1)) }
 }
+
+/*# sourceMappingURL=planetary-system.css.map*/

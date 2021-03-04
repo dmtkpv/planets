@@ -112,6 +112,7 @@
     planets.forEach((planet, index) => {
 
         planet.$bodiesEl.addEventListener('mouseenter', () => {
+            // if ($system.classList.contains('active')) return;
             system.orbits.forEach(orbit => orbit.pause());
             if (active !== -1) return;
             planet.$bodiesEl.classList.add('hover');
@@ -119,6 +120,7 @@
         })
 
         planet.$bodiesEl.addEventListener('mouseleave', () => {
+            // if ($system.classList.contains('active')) return;
             system.orbits.forEach(orbit => orbit.play());
             if (active !== -1) return;
             planet.$bodiesEl.classList.remove('hover');
