@@ -64,6 +64,9 @@ body {
     border: 3px dashed #8FC2FF;
     transition: opacity .5s ease;
 }
+.ps-canvas--orbits .ps-orbit.ps-level-0:first-child { /* invisible sun orbit */
+    opacity: 0;
+}
 .ps-canvas--orbits .ps-orbit.ps-level-1 { /* invisible moon orbits */
     opacity: 0;
 }

@@ -103,6 +103,7 @@
     $system.addEventListener('wheel', event => {
         const delta = event.deltaY > 0 ? -1 : 1;
         system.zoomTo(system.zoom.value + delta);
+        event.preventDefault();
     })
 
     window.addEventListener('resize', () => {
