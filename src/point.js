@@ -69,4 +69,9 @@ export default class PlanetaryObject {
         this.$orbitsEl.style.setProperty('--translate', translate + 'px');
     }
 
+    update () {
+        this.$bodiesEl.style.setProperty('--translate', this.parentOrbit.diameter / 2 + 'px');
+        this.$orbitsEl.style.setProperty('--translate', this.parentOrbit.diameter / 2 + 'px');
+    }
+
 }

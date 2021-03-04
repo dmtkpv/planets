@@ -39,4 +39,10 @@ export default class Orbit {
 
     }
 
+    setDiameter (diameter) {
+        this.diameter = diameter;
+        this.$bodiesEl.style.width = this.$orbitsEl.style.width = this.diameter + 'px';
+        this.$bodiesEl.style.height = this.$orbitsEl.style.height = this.diameter + 'px';
+    }
+
 }

@@ -10,17 +10,36 @@
     const system = new PlanetarySystem($system, planetaryConfig);
     const sun = system.orbits[0].points[0];
     const $nav = document.getElementById('nav');
+    const $note = document.getElementById('note');
     let $links = [];
 
     const planets = system.orbits.slice(1).map(orbit => orbit.points).flat();
     const moons = planets.map(planet => planet.orbits.map(orbit => orbit.points).flat()).flat();
     let active = -1;
 
+    function showNote (body) {
+        const $h1 = $note.querySelector('h1');
+        const $p = $note.querySelector('p');
+        $h1.textContent = body.title;
+        $p.textContent = body.note;
+        $note.style.display = 'block';
+    }
+
+    $note.querySelector('a').addEventListener('click', () => {
+        $note.style.display = 'none';
+    })
+
     function activate (index) {
         active = index;
         planets[active].$bodiesEl.classList.add('active');
         planets[active].$orbitsEl.classList.add('active');
         planets[active].move(0);
+
+        planets[active].orbits.forEach(orbit => {
+            orbit.setDiameter(800);
+            orbit.points.forEach(point => point.update());
+        })
+
         $links[active].classList.add('active');
         $system.classList.add('active');
         sun.move(1200);
@@ -36,6 +55,7 @@
         $links[active].classList.remove('active');
         $system.classList.remove('active');
         sun.move();
+        active = -1;
     }
 
     sun.$bodiesEl.addEventListener('click', () => {
@@ -57,9 +77,18 @@
         })
 
         planet.$bodiesEl.addEventListener('click', () => {
+            if (active === index) return showNote(planet.body);
+
+            system.orbits.forEach(orbit => {
+                orbit.setDiameter(orbit.diameter * 2);
+                planets.forEach(planet => planet.update());
+                // if (orbit !== planet.parentOrbit) orbit.setDiameter(orbit.diameter * 2);
+            })
+
+            // console.log(planet)
+
             deactivate();
-            if (active !== index) activate(index);
-            else active = -1;
+            activate(index);
         })
 
         const $link = $nav.appendChild(document.createElement('button'));
@@ -72,7 +101,7 @@
     moons.forEach(moon => {
         moon.$bodiesEl.addEventListener('click', event => {
             event.stopPropagation();
-            console.log(moon.body.note);
+            showNote(moon.body);
         })
     })
 
@@ -143,5 +172,15 @@
     })
 
 
+
+    // --------------------
+    // Controls
+    // --------------------
+
+    const $controls = document.querySelector('#controls a');
+
+    $controls.addEventListener('click', () => {
+        $controls.parentNode.classList.toggle('active');
+    })
 
 })()
