@@ -27,6 +27,40 @@
             overflow: hidden;
             background: #F1F7FF;
         }
+
+
+
+        #controls {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            transform: translateX(100%);
+            transition: transform .3s ease;
+        }
+        #controls.active {
+            transform: translateX(0);
+        }
+        #controls iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #controls a {
+            position: absolute;
+            top: 20px;
+            right: 100%;
+            width: 20px;
+            height: 40px;
+            background: #F00;
+        }
+
+
+
+
+
+
         .planetary-system {
             /*background: #222;*/
         }
@@ -89,54 +123,21 @@
 
 <section>
     <div id="system"></div>
-
-    <div id="system2">
-
-        <!--
-
-        object.translateTo(0)
-        object.translateTo(ring.radius)
-
-        from: object.style.transform = `rotate(angle) translateX(radius)`
-          to: object.style.transform = `rotate(angle) translateX(0)`
-        -->
-
-        <div class="camera">
-
-            <div class="spin">
-                <div class="object">
-                    <div class="body"></div>
-                </div>
-            </div>
-
-            <div class="spin"> <!-- rotation animation, radius -->
-                <div class="object"> <!-- angle, translateX = radius -->
-                    <div class="spin">
-                        <div class="object"></div>
-                    </div>
-                    <div class="spin"> <!-- rotation animation, radius -->
-                        <div class="object"></div>
-                        <div class="object"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="camera">
-            <div class="ring">
-                <div class="ring"></div>
-                <div class="ring"></div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-
-
 </section>
 
+
+
+<!--
+    Controls
+-->
+
+<div id="controls" class="active">
+    <a></a>
+    <iframe src="controls.html"></iframe>
+</div>
+
+
+<script src="scripts.js"></script>
 
 
 <!--

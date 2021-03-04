@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: #222;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 16px;
+            margin: 32px 0 12px 0;
+        }
+        p {
+            margin: 12px 0 6px 0;
+        }
+        form {
+            padding: 12px;
+        }
+        input,
+        select {
+            width: 100%;
+            margin: 0;
+            padding: 4px;
+            border: none;
+            font-size: inherit;
+        }
+        input:focus,
+        select:focus {
+            outline: none;
+        }
+        footer {
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+
+        <h1>Camera</h1>
+
+        <p>Perspective</p>
+        <input type="number" value="">
+
+        <p>Angle</p>
+        <input type="number" value="">
+
+
+        <h1>Canvas</h1>
+
+        <p>maxWidth</p>
+        <input type="number" value="">
+
+        <p>minWidth</p>
+        <input type="number" value="">
+
+        <h1>Sun orbit</h1>
+
+        <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <p>Diameter</p>
+        <input type="number" value="">
+
+        <p>Animation Duration</p>
+        <input type="number" value="">
+
+        <h1>Planet</h1>
+
+        <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <p>Angle</p>
+        <input type="number" value="">
+
+        <p>Size</p>
+        <input type="number" value="">
+
+        <p>Image</p>
+        <input type="text" value="">
+
+        <p>Title</p>
+        <input type="text" value="">
+
+        <p>Note</p>
+        <input type="text" value="">
+
+        <h1>Planet orbit</h1>
+
+        <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <p>Diameter</p>
+        <input type="number" value="">
+
+        <p>Animation Duration</p>
+        <input type="number" value="">
+
+        <h1>Moon</h1>
+
+        <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <p>Angle</p>
+        <input type="number" value="">
+
+        <p>Size</p>
+        <input type="number" value="">
+
+        <p>Image</p>
+        <input type="text" value="">
+
+        <p>Title</p>
+        <input type="text" value="">
+
+        <p>Note</p>
+        <input type="text" value="">
+
+        <footer>
+            <button>Apply</button>
+            <button>Download</button>
+            <button>Reset</button>
+        </footer>
+
+    </form>
+
+    <script src="config.js"></script>
+    <script>
+
+        console.log(JSON.stringify(PlanetaryObject))
+
+    </script>
+
+</body>
+</html>
