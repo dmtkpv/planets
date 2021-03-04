@@ -30,7 +30,7 @@ const planetaryConfig = {
         {
             diameter: 0,
             animationDuration: 0,
-            objects: [
+            points: [
                 {
                     angle: 135,
                     body: {
@@ -50,7 +50,7 @@ const planetaryConfig = {
         {
             diameter: 760,
             animationDuration: 20,
-            objects: [
+            points: [
 
 
 
@@ -67,7 +67,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -97,7 +97,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -149,7 +149,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -214,7 +214,7 @@ const planetaryConfig = {
         {
             diameter: 1340,
             animationDuration: 30,
-            objects: [
+            points: [
 
 
                 // Planet 2 1
@@ -230,7 +230,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -252,7 +252,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 120,
                                     body: {
@@ -280,7 +280,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -348,7 +348,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -378,7 +378,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -427,7 +427,7 @@ const planetaryConfig = {
         {
             diameter: 1920,
             animationDuration: 60,
-            objects: [
+            points: [
 
 
                 // Planet 3 1
@@ -443,7 +443,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -473,7 +473,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -525,7 +525,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -593,7 +593,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -623,7 +623,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -675,7 +675,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -744,7 +744,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -774,7 +774,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -826,7 +826,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -894,7 +894,7 @@ const planetaryConfig = {
                         {
                             diameter: 280,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
@@ -924,7 +924,7 @@ const planetaryConfig = {
                         {
                             diameter: 480,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 60,
                                     body: {
@@ -976,7 +976,7 @@ const planetaryConfig = {
                         {
                             diameter: 380,
                             animationDuration: 15,
-                            objects: [
+                            points: [
                                 {
                                     angle: 0,
                                     body: {
