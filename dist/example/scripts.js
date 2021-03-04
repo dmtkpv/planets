@@ -84,12 +84,14 @@
     planets.forEach((planet, index) => {
 
         planet.$bodiesEl.addEventListener('mouseenter', () => {
+            system.orbits.forEach(orbit => orbit.pause());
             if (active !== -1) return;
             planet.$bodiesEl.classList.add('hover');
             planet.$orbitsEl.classList.add('hover');
         })
 
         planet.$bodiesEl.addEventListener('mouseleave', () => {
+            system.orbits.forEach(orbit => orbit.play());
             if (active !== -1) return;
             planet.$bodiesEl.classList.remove('hover');
             planet.$orbitsEl.classList.remove('hover');

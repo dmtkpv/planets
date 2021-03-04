@@ -48,7 +48,7 @@ const planetaryConfig = {
         // --------------------
 
         {
-            diameter: 760,
+            diameter: 615,
             animationDuration: 20,
             points: [
 
@@ -429,7 +429,7 @@ const planetaryConfig = {
         // --------------------
 
         {
-            diameter: 1340,
+            diameter: 1050,
             animationDuration: 30,
             points: [
 
@@ -514,7 +514,7 @@ const planetaryConfig = {
         // --------------------
 
         {
-            diameter: 1920,
+            diameter: 1485,
             animationDuration: 60,
             points: [
 
@@ -1008,7 +1008,7 @@ const planetaryConfig = {
         // --------------------
 
         {
-            diameter: 2100,
+            diameter: 1920,
             animationDuration: 20,
             points: [
                 {
