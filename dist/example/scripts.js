@@ -75,10 +75,10 @@
         planets[active].move(0);
 
 
-        // planets[active].orbits.forEach(orbit => {
-        //     orbit.setDiameter(800);
-        //     orbit.points.forEach(point => point.update());
-        // })
+        planets[active].orbits.forEach(orbit => {
+            orbit.setDiameter(orbit.diameter * 1.5);
+            orbit.points.forEach(point => point.update());
+        })
 
         $links[active].classList.add('active');
         $system.classList.add('active');
@@ -93,6 +93,12 @@
         planets[active].$bodiesEl.classList.remove('hover');
         planets[active].$orbitsEl.classList.remove('hover');
         planets[active].move();
+
+        planets[active].orbits.forEach(orbit => {
+            orbit.setDiameter(orbit.diameter / 1.5);
+            orbit.points.forEach(point => point.update());
+        })
+
         $links[active].classList.remove('active');
         $system.classList.remove('active');
         sun.move();
