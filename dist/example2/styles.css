@@ -1,0 +1,265 @@
+/*
+    Reset
+*/
+
+* {
+     box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+}
+p {
+    margin: 0;
+}
+
+
+
+/*
+    Planetary system
+*/
+
+.system {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    user-select: none;
+}
+.ps-canvas {
+    perspective: none !important;
+}
+.ps-body {
+    /*background: #F00;*/
+}
+
+/* body styles */
+
+.body {
+    position: relative;
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+.body img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.body p {
+    position: absolute;
+    left: 50%;
+    padding: 10px;
+    color: #0A69D2;
+    border: 2px solid #FFF;
+    transform: translateX(-50%);
+    font-size: 28px;
+}
+.ps-point.ps-level-0 > .ps-body .body p {
+    bottom: 100%;
+    color: #FFFFFF;
+    background: #0A69D2;
+}
+.ps-point.ps-level-1 > .ps-body .body p {
+    top: 100%;
+    color: #0A69D2;
+    background: #D2E5FF;
+}
+
+
+
+/* orbits */
+
+.ps-canvas--orbits .ps-orbit {
+    border: 3px dashed #8FC2FF;
+    transition: opacity .5s ease;
+}
+.ps-canvas--orbits .ps-orbit.ps-level-0:first-child { /* invisible sun orbit */
+    opacity: 0;
+}
+.ps-canvas--orbits .ps-orbit.ps-level-1 { /* invisible moon orbits */
+    opacity: 0;
+}
+.ps-canvas--orbits .hover .ps-orbit.ps-level-1, /* active/hovered planet point has visible moon orbits */
+.ps-canvas--orbits .active .ps-orbit.ps-level-1 {
+    opacity: 1;
+}
+.ps-scene.active .ps-canvas--orbits .ps-orbit.ps-level-0 {
+    opacity: 0.5;
+}
+
+
+/* bodies */
+
+.ps-canvas--bodies .ps-body {
+    transition: opacity .5s ease;
+}
+.ps-canvas--bodies .ps-point.ps-level-1 > .ps-body  { /* invisible moons */
+    opacity: 0;
+}
+.ps-canvas--bodies .hover .ps-point.ps-level-1 > .ps-body, /* active/hovered planet point has visible moons */
+.ps-canvas--bodies .active .ps-point.ps-level-1 > .ps-body {
+    opacity: 1;
+}
+.ps-scene.active .ps-orbit:not(:first-child) .ps-point.ps-level-0:not(.active) > .ps-body {
+    opacity: 0.5;
+}
+
+
+/* point transition */
+
+.ps-canvas .ps-point {
+    transition: transform 1s;
+}
+
+
+
+/*
+    Nav
+*/
+
+#nav button.active {
+    background: #000;
+    color: #FFFFFF;
+}
+
+
+
+/*
+    Controls
+*/
+
+#controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+}
+#controls.active {
+    transform: translateX(0);
+}
+#controls iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#controls a {
+    position: absolute;
+    top: 20px;
+    right: 100%;
+    width: 20px;
+    height: 40px;
+    background: #F00;
+}
+
+
+
+/*
+    Note
+*/
+
+#note {
+    display: none;
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    width: 347px;
+    background: #FFFFFF;
+    border: 2px solid #0A69D2;
+    box-shadow: 0px 4px 4px rgba(34, 34, 34, 0.16), 0px 4px 8px rgba(68, 68, 68, 0.08);
+    padding: 33px;
+    border-radius: 8px;
+}
+#note h1 {
+    color: #0A69D2;
+    margin: 0 0 11px 0;
+}
+#note a {
+    position: absolute;
+    top: 33px;
+    right: 33px;
+    font-size: 32px;
+}
+
+
+
+/*
+    Play
+*/
+
+#play {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    color: #FFFFFF;
+}
+#play svg {
+    display: none;
+    width: 48px;
+    height: 48px;
+    fill: currentColor;
+}
+#play.active svg:last-child {
+    display: block;
+}
+#play:not(.active) svg:first-child {
+    display: block;
+}
+
+
+
+/*
+    Stars
+*/
+
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#stars div {
+    border-radius: 50%;
+    position: absolute;
+    background: #FFF;
+    animation: star linear infinite;
+}
+@keyframes star {
+    0%   { opacity: 1; }
+    30%  { opacity: 1; }
+    70%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+/*
+    Heading
+*/
+
+#heading {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+}
+#heading h1 {
+    color: rgba(255, 255, 255, 0.1);
+    background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: #222;
+    background-size: 125px 100%;
+    -webkit-background-clip: text;
+    animation: heading 2s infinite;
+}
+@keyframes heading {
+    0% { background-position: top left }
+    100% {background-position: top right }
+}
